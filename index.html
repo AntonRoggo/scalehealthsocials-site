@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scale Health Socials | Creative Strategy for Health Brands</title>
+<meta name="description" content="Creative strategy and full-service Meta ads for DTC health and wellness brands. The ads behind Organised and Lymphoria.">
+<link rel="icon" href="shs-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* Layout system modeled on linear.app: near-black canvas, Inter with tight tracking,
+     a white headline that runs into a grey sentence, hairline borders, mono labels,
+     a product-style results panel under the hero, a monochrome logo row.
+     Colors are SHS's own: black, white, and the logo green #4FD39E. */
+  :root {
+    --bg: #08090a;
+    --panel: #0f1011;
+    --panel-2: #141516;
+    --line: rgba(255,255,255,.08);
+    --line-2: rgba(255,255,255,.14);
+    --text: #f7f8f8;
+    --grey: #8a8f98;
+    --grey-2: #62666d;
+    --green: #4fd39e;
+    --green-dim: rgba(79,211,158,.14);
+    --max: 1120px;
+    --mono: "JetBrains Mono", ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    letter-spacing: -.011em;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  [hidden] { display: none !important; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+  .mono { font-family: var(--mono); font-size: 12px; letter-spacing: .04em; text-transform: uppercase; color: var(--grey-2); }
+  .green { color: var(--green); }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--text); color: #08090a;
+    font-weight: 500; font-size: 14px;
+    padding: 9px 18px; border-radius: 999px;
+    transition: opacity .15s ease, background .15s ease;
+  }
+  .btn:hover { opacity: .88; }
+  .btn-lg { font-size: 15px; padding: 12px 22px; }
+  .btn-quiet { background: transparent; color: var(--text); border: 1px solid var(--line-2); }
+  .btn-quiet:hover { background: rgba(255,255,255,.04); opacity: 1; }
+  .arrow { transition: transform .15s ease; }
+  .btn:hover .arrow { transform: translateX(2px); }
+
+  /* nav */
+  header {
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(8,9,10,.72);
+    backdrop-filter: saturate(180%) blur(14px);
+    -webkit-backdrop-filter: saturate(180%) blur(14px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 15px; letter-spacing: -.02em; }
+  .brand img { width: 28px; height: 28px; border-radius: 50%; }
+  .nav-right { display: flex; align-items: center; gap: 30px; }
+  .nav-links { display: flex; gap: 26px; font-size: 14px; color: var(--grey); }
+  .nav-links a:hover { color: var(--text); }
+
+  /* hero */
+  .hero { position: relative; padding: 130px 0 0; overflow: hidden; }
+  .hero::before {
+    content: ""; position: absolute; inset: -200px 0 auto 0; height: 700px;
+    background: radial-gradient(60% 50% at 50% 0%, rgba(79,211,158,.16), transparent 70%);
+    pointer-events: none;
+  }
+  .hero .wrap { position: relative; }
+  .pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 13px; color: var(--grey);
+    border: 1px solid var(--line-2); border-radius: 999px;
+    padding: 5px 12px 5px 6px; margin-bottom: 28px;
+    background: rgba(255,255,255,.02);
+  }
+  .pill i { white-space: nowrap; font-style: normal; font-size: 11px; font-weight: 600; color: #08090a; background: var(--green); border-radius: 999px; padding: 2px 8px; }
+  h1 {
+    font-size: clamp(44px, 7vw, 80px);
+    line-height: 1.02;
+    letter-spacing: -.045em;
+    font-weight: 600;
+    max-width: 900px;
+    text-wrap: balance;
+  }
+  .lede { margin-top: 24px; max-width: 560px; color: var(--grey); font-size: 18px; line-height: 1.55; }
+  .hero-ctas { display: flex; gap: 10px; margin-top: 34px; flex-wrap: wrap; }
+
+  /* results panel under the hero, where Linear shows its app */
+  .shot {
+    position: relative; margin-top: 80px;
+    border: 1px solid var(--line-2); border-radius: 14px;
+    background: var(--panel);
+    overflow: hidden;
+  }
+  .shot-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 20px; border-bottom: 1px solid var(--line); }
+  .shot-bar .title { font-size: 14px; font-weight: 500; color: var(--text); }
+  .shot-bar .live { font-size: 12px; color: var(--green); display: flex; align-items: center; gap: 6px; }
+  .shot-bar .live::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--green); box-shadow: 0 0 10px var(--green); }
+
+  table.ads { width: 100%; border-collapse: collapse; font-size: 14px; }
+  table.ads th { text-align: right; font-family: var(--mono); font-weight: 400; font-size: 11px; letter-spacing: .05em; text-transform: uppercase; color: var(--grey-2); padding: 14px 20px; border-bottom: 1px solid var(--line); }
+  table.ads th:first-child, table.ads td:first-child { text-align: left; }
+  table.ads td { text-align: right; padding: 15px 20px; border-bottom: 1px solid var(--line); color: var(--grey); font-variant-numeric: tabular-nums; }
+  table.ads td:first-child { color: var(--text); }
+  table.ads td.hi { color: var(--green); }
+  table.ads tr:last-child td { border-bottom: none; }
+  .shot .totals { border-top: 1px solid var(--line); }
+
+  /* logo marquee */
+  .logos { padding: 72px 0 0; }
+  .marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
+  .marquee-track { display: flex; width: max-content; animation: slide 42s linear infinite; }
+  .marquee:hover .marquee-track { animation-play-state: paused; }
+  .marquee-set { display: flex; align-items: center; gap: 88px; padding-right: 88px; }
+  .marquee-set img { height: 26px; width: auto; display: block; opacity: .7; }
+  .lg-white { filter: brightness(0) invert(1); }
+  .lg-lym { height: 28px !important; }
+  .lg-tt { height: 24px !important; }
+  .lg-sos { height: 52px !important; }
+  .lg-bw { height: 50px !important; }
+  .lg-port { height: 22px !important; }
+  .logos .mono { text-align: center; margin-bottom: 30px; }
+  @keyframes slide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .marquee-track { animation-duration: 160s; } }
+
+  /* statement + figures (Linear's "A new species..." block) */
+  section { padding: 120px 0; }
+  .statement { font-size: clamp(28px, 3.8vw, 44px); line-height: 1.15; letter-spacing: -.035em; font-weight: 600; max-width: 980px; margin-top: 18px; }
+  .statement span { color: var(--grey-2); }
+
+  .head { max-width: 640px; margin-bottom: 56px; }
+  .head h2 { font-size: clamp(32px, 4.4vw, 52px); line-height: 1.05; letter-spacing: -.04em; font-weight: 600; margin-top: 14px; text-wrap: balance; }
+  .head p { color: var(--grey); font-size: 17px; margin-top: 16px; }
+  .rule { border-top: 1px solid var(--line); }
+
+  /* services */
+  .services { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .card { border: 1px solid var(--line); border-radius: 14px; background: var(--panel); padding: 34px; display: flex; flex-direction: column; }
+  .card.feature { border-color: rgba(79,211,158,.35); }
+  .card h3 { font-size: 24px; font-weight: 600; letter-spacing: -.03em; margin: 12px 0 8px; }
+  .card > p { color: var(--grey); margin-bottom: 26px; }
+  .card ul { list-style: none; flex: 1; margin-bottom: 32px; }
+  .card li { display: flex; gap: 12px; padding: 11px 0; border-top: 1px solid var(--line); font-size: 15px; color: #d0d6e0; }
+  .card li::before { content: ""; flex: none; width: 14px; height: 14px; margin-top: 5px; border-radius: 50%; border: 1.5px solid var(--green); background: radial-gradient(circle, var(--green) 30%, transparent 34%); }
+  .card .btn { align-self: flex-start; }
+
+  /* results */
+  .totals { display: grid; grid-template-columns: repeat(3, 1fr); }
+  .total { padding: 28px 30px; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+  .total:nth-child(3n+1) { border-left: none; }
+  .total:nth-child(-n+3) { border-top: none; }
+  .total b { display: block; font-size: 40px; font-weight: 600; letter-spacing: -.04em; margin: 10px 0 4px; }
+  .total p { color: var(--grey); font-size: 14px; }
+  .note { color: var(--grey-2); font-size: 13px; margin-top: 16px; }
+
+  /* process */
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); }
+  .step { padding: 26px 26px 0 0; }
+  .step + .step { border-left: 1px solid var(--line); padding-left: 26px; }
+  .step h4 { font-size: 17px; font-weight: 600; letter-spacing: -.02em; margin: 14px 0 8px; }
+  .step p { color: var(--grey); font-size: 15px; }
+
+  /* faq */
+  .faq { max-width: 760px; }
+  details { border-top: 1px solid var(--line); padding: 22px 0; }
+  details:last-child { border-bottom: 1px solid var(--line); }
+  summary { cursor: pointer; font-size: 17px; font-weight: 500; list-style: none; display: flex; justify-content: space-between; gap: 20px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; color: var(--grey); font-size: 22px; line-height: 1; transition: transform .2s ease; }
+  details[open] summary::after { transform: rotate(45deg); }
+  details p { color: var(--grey); margin-top: 12px; max-width: 640px; }
+
+  /* final */
+  .final { position: relative; text-align: center; padding: 140px 0; overflow: hidden; border-top: 1px solid var(--line); }
+  .final::before { content: ""; position: absolute; inset: 0; background: radial-gradient(50% 60% at 50% 100%, rgba(79,211,158,.10), transparent 70%); pointer-events: none; }
+  .final .wrap { position: relative; }
+  .final img { width: 56px; height: 56px; border-radius: 50%; margin-bottom: 28px; }
+  .final h2 { font-size: clamp(36px, 5vw, 60px); line-height: 1.04; letter-spacing: -.045em; font-weight: 600; max-width: 760px; margin: 0 auto; text-wrap: balance; }
+  .final p { color: var(--grey); font-size: 17px; margin: 18px auto 40px; max-width: 520px; }
+
+  /* apply form */
+  .apply { max-width: 680px; margin: 0 auto; text-align: left; display: grid; gap: 16px; }
+  .apply .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .apply label { display: grid; gap: 7px; font-size: 13px; color: var(--grey); }
+  .apply input, .apply select, .apply textarea {
+    width: 100%; font: inherit; font-size: 15px; color: var(--text);
+    background: rgba(255,255,255,.03); border: 1px solid var(--line-2); border-radius: 10px;
+    padding: 12px 14px; outline: none; transition: border-color .15s ease, background .15s ease;
+  }
+  .apply select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--grey) 50%), linear-gradient(135deg, var(--grey) 50%, transparent 50%); background-position: calc(100% - 18px) 52%, calc(100% - 13px) 52%; background-size: 5px 5px; background-repeat: no-repeat; }
+  .apply select option { background: #141516; }
+  .apply input:focus, .apply select:focus, .apply textarea:focus { border-color: var(--green); background: rgba(79,211,158,.04); }
+  .apply .invalid { border-color: #e5484d; }
+  .apply textarea { resize: vertical; }
+  .apply .btn { justify-self: start; border: none; cursor: pointer; margin-top: 6px; }
+  .apply .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+  .form-error { color: #e5484d; font-size: 14px; margin: 0 !important; }
+  .apply-done { max-width: 560px; margin: 0 auto; border: 1px solid var(--line-2); border-radius: 14px; padding: 36px; background: var(--panel); }
+  .apply-done h3 { font-size: 24px; font-weight: 600; letter-spacing: -.03em; }
+  .apply-done p { margin: 10px auto 24px; }
+
+  footer { border-top: 1px solid var(--line); padding: 28px 0; color: var(--grey-2); font-size: 13px; }
+  footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  footer a:hover { color: var(--text); }
+
+  @media (max-width: 900px) {
+    .total { padding: 22px; }
+    .total b { font-size: 34px; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    table.ads .hide-sm { display: none; }
+    .step:nth-child(3) { border-left: none; padding-left: 0; }
+    .step { padding-bottom: 26px; }
+  }
+  @media (max-width: 760px) {
+    .nav-links { display: none; }
+  }
+  @media (max-width: 640px) {
+    .totals { grid-template-columns: 1fr; }
+    .totals .total { border-left: none; border-top: 1px solid var(--line); }
+    .totals .total:first-child { border-top: none; }
+    .apply .row { grid-template-columns: 1fr; }
+    .wrap { padding: 0 16px; }
+    .hero { padding-top: 84px; }
+    .services, .steps { grid-template-columns: 1fr; }
+    .step + .step { border-left: none; padding-left: 0; border-top: 1px solid var(--line); }
+    .card { padding: 26px; }
+    section { padding: 84px 0; }
+    .marquee-set { gap: 52px; padding-right: 52px; }
+    .marquee-set img { height: 20px; }
+    .lg-lym { height: 22px !important; }
+    .lg-tt { height: 18px !important; }
+    .lg-sos { height: 36px !important; }
+    .lg-bw { height: 42px !important; }
+    .lg-port { height: 17px !important; }
+    .shot-bar .live { display: none; }
+    table.ads th, table.ads td { padding: 12px 14px; }
+    .brand span { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="brand"><img src="shs-logo.png" alt=""><span>Scale Health Socials</span></a>
+    <div class="nav-right">
+      <nav class="nav-links">
+        <a href="#why">Why us</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="btn" href="#apply">Book a call</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="pill"><i>Now booking</i>For health brands spending $100K+ a month on Meta</div>
+      <h1>Ads that scale health brands.</h1>
+      <p class="lede">We write the ads behind six-figure winners for Organised and Lymphoria. Hire us for the strategy, or for the whole team to make and run the ads.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-lg" href="#apply">Book a call <span class="arrow">→</span></a>
+        <a class="btn btn-lg btn-quiet" href="#services">See the services</a>
+      </div>
+
+      <div class="shot">
+        <div class="shot-bar">
+          <div class="title">Results</div>
+          <div class="live">From the brands' ad accounts</div>
+        </div>
+        <table class="ads">
+          <thead><tr><th>Ad</th><th>Spend</th><th class="hide-sm">Purchases</th><th>CPA</th><th class="hide-sm">Hook rate</th></tr></thead>
+          <tbody>
+            <tr><td>Founder story</td><td class="hi">$200K+</td><td class="hide-sm">n/a</td><td>£59.81</td><td class="hide-sm">56.8%</td></tr>
+            <tr><td>Founder FAQ</td><td class="hi">$118,363</td><td class="hide-sm">2,073</td><td>$57.10</td><td class="hide-sm">29%</td></tr>
+            <tr><td>Longest-living people</td><td class="hi">£98,236</td><td class="hide-sm">1,379</td><td>£71.24</td><td class="hide-sm">56.3%</td></tr>
+            <tr><td>Ingredient confession</td><td class="hi">$71,568</td><td class="hide-sm">2,014</td><td>$35.54</td><td class="hide-sm">30.3%</td></tr>
+            <tr><td>Esthetician story</td><td class="hi">$52,604</td><td class="hide-sm">982</td><td>$53.57</td><td class="hide-sm">71.7%</td></tr>
+          </tbody>
+        </table>
+        <div class="totals">
+          <div class="total"><div class="mono">Ad spend</div><b>£379K+</b><p>across 7 ads, plus one ad past $200K</p></div>
+          <div class="total"><div class="mono">Ad spend</div><b>$837K</b><p>spent on our creatives, Sep 16 to Oct 22, 2026</p></div>
+          <div class="total"><div class="mono">Ad spend</div><b>$124K+</b><p>across 2 ads, best ROAS 2.60</p></div>
+          <div class="total"><div class="mono">Average hook rate</div><b>46%</b><p>across 11 ads, against a 25% benchmark</p></div>
+          <div class="total"><div class="mono">Average click-through rate</div><b>2.43%</b><p>across the same 11 ads, against a 1% benchmark</p></div>
+          <div class="total"><div class="mono">Purchases</div><b>14,013</b><p>tracked across 11 ads</p></div>
+        </div>
+      </div>
+      <p class="note">Numbers are in each ad account's own currency. One brand's figures come from its Spanish ad account, through Nov 3, 2026. Averages cover the ads with data for that metric.</p>
+    </div>
+  </section>
+
+  <div class="logos">
+    <div class="wrap"><div class="mono">Brands we've worked with</div></div>
+    <div class="marquee" aria-label="Organised, Lymphoria, The Tallowed Truth, Seed Oil Scout, Blood and Water, Portside Catch">
+      <div class="marquee-track">
+        <div class="marquee-set">
+          <img src="logos/organised.svg" alt="Organised" class="lg-white">
+          <img src="logos/lymphoria.png" alt="Lymphoria" class="lg-white lg-lym">
+          <img src="logos/tallowed-truth-white.png" alt="The Tallowed Truth" class="lg-tt">
+          <img src="logos/seed-oil-scout.png" alt="Seed Oil Scout" class="lg-white lg-sos">
+          <img src="logos/blood-and-water-white.png" alt="Blood and Water" class="lg-bw">
+          <img src="logos/portside-catch.png" alt="Portside Catch" class="lg-white lg-port">
+        </div>
+        <div class="marquee-set" aria-hidden="true">
+          <img src="logos/organised.svg" alt="" class="lg-white">
+          <img src="logos/lymphoria.png" alt="" class="lg-white lg-lym">
+          <img src="logos/tallowed-truth-white.png" alt="" class="lg-tt">
+          <img src="logos/seed-oil-scout.png" alt="" class="lg-white lg-sos">
+          <img src="logos/blood-and-water-white.png" alt="" class="lg-bw">
+          <img src="logos/portside-catch.png" alt="" class="lg-white lg-port">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="why">
+    <div class="wrap">
+      <div class="mono">Why us</div>
+      <p class="statement">Ads that look like organic posts. <span>People scroll straight past anything that looks like an ad. So ours look like the posts they stop for: a founder answering questions, a confession, a story told to camera. The sale comes after they're already watching.</span></p>
+    </div>
+  </section>
+
+  <section id="services" class="rule">
+    <div class="wrap">
+      <div class="head">
+        <div class="mono">Services</div>
+        <h2>Two ways to work together.</h2>
+        <p>Already have editors and a media buyer? Take Strategy. Want the ads made and run for you? Take Execution.</p>
+      </div>
+      <div class="services">
+        <div class="card">
+          <div class="mono">Creative strategy as a service</div>
+          <h3>Strategy</h3>
+          <p>Your team makes and runs the ads. We plan the account and write the scripts.</p>
+          <ul>
+            <li>Account strategy: what to test, what to scale and what to kill</li>
+            <li>Consultation calls with you and your team</li>
+            <li>Script writing: hooks, full scripts and shot-by-shot briefs</li>
+            <li>Every script built from your reviews, comments and competitor winners</li>
+          </ul>
+          <a class="btn btn-quiet" href="#apply">Book a call <span class="arrow">→</span></a>
+        </div>
+        <div class="card feature">
+          <div class="mono green">Full agency</div>
+          <h3>Execution</h3>
+          <p>Everything in Strategy, plus our team makes the ads and runs them.</p>
+          <ul>
+            <li>Our editors: finished video and static ads, ready to launch</li>
+            <li>UGC: we find, brief and manage the creators</li>
+            <li>Meta media buying: launch, test and scale in your ad account</li>
+          </ul>
+          <a class="btn" href="#apply">Book a call <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" class="rule">
+    <div class="wrap">
+      <div class="head">
+        <div class="mono">Process</div>
+        <h2>No guessing. Every ad starts from proof.</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="mono">01</div><h4>Dig</h4><p>Read your reviews and comments for the words customers actually use. Pull the competitor ads that are spending.</p></div>
+        <div class="step"><div class="mono">02</div><h4>Angle</h4><p>Pick the wound and the hook. Every hook adapts an ad that already spends money, never a blank page.</p></div>
+        <div class="step"><div class="mono">03</div><h4>Brief</h4><p>Line-by-line scripts with the shot for every line, checked before an editor ever sees them.</p></div>
+        <div class="step"><div class="mono">04</div><h4>Test and iterate</h4><p>Read spend and CPA on every ad. Winners get new hooks and new worlds. Losers get a written reason.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="rule">
+    <div class="wrap">
+      <div class="head">
+        <div class="mono">FAQ</div>
+        <h2>Questions.</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Who is this for?</summary>
+          <p>DTC health and wellness brands spending $100K+ a month on Meta that need more winning ads. Supplements, skincare, wellness products.</p>
+        </details>
+        <details>
+          <summary>What's the difference between Strategy and Execution?</summary>
+          <p>Strategy gets you account strategy, consultation and the scripts. Your team makes and runs the ads. Execution does all of that, plus our editors, creators and media buying.</p>
+        </details>
+        <details>
+          <summary>What happens after I apply?</summary>
+          <p>If you're a fit, you pick a call time straight away. On the call we look at what's running in your account and tell you what we'd make first.</p>
+        </details>
+        <details>
+          <summary>Do you work with brands outside health?</summary>
+          <p>Health and wellness is where the proof is. Book a call and we'll tell you straight if we're a fit.</p>
+        </details>
+        <details>
+          <summary>How fast do we see ads?</summary>
+          <p>First briefs land in the first week. On Execution, finished ads follow once our editors cut them.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="final" id="apply">
+    <div class="wrap">
+      <img src="shs-logo.png" alt="">
+      <h2>Want ads like these in your account?</h2>
+      <p>Tell us about your brand. If you're a fit, you'll pick a call time on the next screen.</p>
+
+      <form class="apply" id="applyForm" novalidate>
+        <div class="row">
+          <label>Your name<input name="name" required autocomplete="name"></label>
+          <label>Work email<input name="email" type="email" required autocomplete="email"></label>
+        </div>
+        <div class="row">
+          <label>Brand<input name="brand" required></label>
+          <label>Website<input name="website" placeholder="brand.com" required></label>
+        </div>
+        <div class="row">
+          <label>Monthly Meta spend
+            <select name="spend" required>
+              <option value="">Choose one</option>
+              <option>Under $50K</option>
+              <option>$50K to $100K</option>
+              <option>$100K to $300K</option>
+              <option>$300K to $1M</option>
+              <option>$1M+</option>
+            </select>
+          </label>
+          <label>What do you need?
+            <select name="service" required>
+              <option value="">Choose one</option>
+              <option>Strategy (we write, you make)</option>
+              <option>Execution (we make and run the ads)</option>
+              <option>Not sure yet</option>
+            </select>
+          </label>
+        </div>
+        <label>What's the biggest problem with your ads right now?<textarea name="problem" rows="3"></textarea></label>
+        <label>How did you hear about us?<input name="source"></label>
+        <input class="hp" name="company_url" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn btn-lg" type="submit">Apply <span class="arrow">→</span></button>
+        <p class="form-error" id="formError" hidden>Please fill in the fields above.</p>
+      </form>
+
+      <div class="apply-done" id="doneFit" hidden>
+        <h3>You're a fit. Pick a time.</h3>
+        <p>We've got your details. Grab a slot and we'll look at your account together.</p>
+        <a class="btn btn-lg" href="https://calendar.app.google/wQyci3ye8D1xXJ6SA" target="_blank" rel="noopener">Book a call <span class="arrow">→</span></a>
+      </div>
+      <div class="apply-done" id="doneLater" hidden>
+        <h3>Thanks, we've got it.</h3>
+        <p>We usually work with brands spending $100K+ a month on Meta. We'll read your answers and email you.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 Scale Health Socials</div>
+    <a href="mailto:anton@scalehealthsocials.com">anton@scalehealthsocials.com</a>
+  </div>
+</footer>
+
+<script>
+  // Paste the Apps Script web app URL here (see apps-script.gs). Leads go to the SHS Leads sheet.
+  const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwVrVM_k7jtlQmIFcdhCbD-819hhcNyKy7uwszxte0xDAGkpffk0dGKfwI4CfCBGFel5Q/exec';
+  const form = document.getElementById('applyForm');
+  form.addEventListener('submit', async (ev) => {
+    ev.preventDefault();
+    let ok = true;
+    form.querySelectorAll('[required]').forEach(el => {
+      const bad = !el.value.trim() || (el.type === 'email' && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(el.value));
+      el.classList.toggle('invalid', bad); if (bad) ok = false;
+    });
+    document.getElementById('formError').hidden = ok;
+    if (!ok) return;
+    const data = new URLSearchParams(new FormData(form));
+    data.append('page', location.href);
+    const btn = form.querySelector('button'); btn.disabled = true; btn.textContent = 'Sending...';
+    try { if (FORM_ENDPOINT) await fetch(FORM_ENDPOINT, { method: 'POST', mode: 'no-cors', body: data }); }
+    catch (e) { console.warn('lead not sent', e); }
+    const fit = !['Under $50K', '$50K to $100K'].includes(form.spend.value);
+    form.hidden = true;
+    document.getElementById(fit ? 'doneFit' : 'doneLater').hidden = false;
+  });
+</script>
+</body>
+</html>
